@@ -1,0 +1,130 @@
+.cards-main {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.cards-inner {
+  width: 300px;
+  height: 360px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(79, 49, 10, 0.35);
+  border-radius: 10px;
+}
+
+.cards-main:hover .cards-inner {
+  transform: rotateY(180deg);
+}
+
+.cards-front,
+.cards-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.cards-front {
+  background: #fff;
+}
+
+.cards-back {
+  background-color: #558148;
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.card-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.cards-desc {
+  color: white;
+  font-weight: 600;
+}
+
+.cards-subtitle {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.cards-img-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cards-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-img-box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100px;
+  background: linear-gradient(0deg, rgba(69, 50, 20, 0.8) 50%, transparent);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.cards-name-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 20px;
+  width: 100%;
+  z-index: 2;
+}
+
+.cards-name {
+  max-width: 80%;
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.cards-desc {
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 10px;
+  overflow-y: auto;
+  max-height: 100%;
+  padding: 10px;
+}
+
+@media (max-width: 700px) {
+  .cards-inner {
+    width: 200px;
+    height: 260px;
+  }
+
+  .cards-name {
+    font-size: 1.2rem;
+  }
+}
