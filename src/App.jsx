@@ -41,7 +41,7 @@ function App() {
     },
     {
       name: "Phillip Emeagwali",
-      subtitle: "Mestre e doutor em computação cintífica",
+      subtitle: "Mestre e doutor em computação científica",
       description:
         "O nigeriano Philip Emeagwali obteve um bacharelado em matemática e três outros diplomas: um doutorado em computação científica pela Universidade de Michigan e dois mestrados pela Universidade George Washington. Ele ficou conhecido na tecnologia por usar 65 mil processadores para inventar o computador mais rápido do mundo, que realiza 3,1 bilhões de cálculos por segundo. Ele foi eleito o 35º maior africano (e o maior cientista africano) de todos os tempos em uma pesquisa da revista New African. Seus registros foram citados em um discurso de Bill Clinton como um exemplo do que os nigerianos poderiam alcançar quando tivessem oportunidade.",
       img: philip,
