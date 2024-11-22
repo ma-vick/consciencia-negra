@@ -19,12 +19,16 @@ import ibm from "./assets/imgs/ibm.png";
 
 import "./App.css";
 
+import { BsInfoSquare } from "react-icons/bs";
+
 import Cards from "./components/Cards/Cards";
 import Page from "./components/Page/Page";
+import Info from "./components/Info/Info";
 
 function App() {
   const [isPageOpen, setIsPageOpen] = useState(false);
   const [selectedPerson, setSelectedPerson] = useState(null);
+  const [isInfoVisible, setIsInfoVisible] = useState(false);
 
   const persons = [
     {
@@ -78,11 +82,20 @@ function App() {
     setIsPageOpen(false);
   };
 
+  const toggleInfo = () => {
+    setIsInfoVisible((prev) => !prev);
+  };
+
   return (
     <main className="app-main">
-      <h1 className="app-title">
-        Pessoas negras na <span className="app-span">Computação</span>
-      </h1>
+      <BsInfoSquare
+        className="info-icon"
+        color="#583f25e6"
+        size={50}
+        onClick={toggleInfo} // Abrir/fechar Info
+      />
+      {isInfoVisible && <Info onClose={toggleInfo} />}
+      <h1 className="app-title">Pessoas negras na Computação</h1>
       <div className="wrapper">
         {persons.map((person, index) => (
           <Cards key={index} person={person} onClick={() => openPage(person)} />
